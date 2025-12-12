@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@layer base {
+  @font-face {
+    font-family: "roboto-regular";
+    src: url("/roboto-regular.woff2");
+  }
+
+  @font-face {
+    font-family: "roboto-meduim";
+    src: url("/roboto-meduim.woff2");
+  }
+
+  @font-face {
+    font-family: "roboto-bold";
+    src: url("/roboto-bold.woff2");
+  }
+}
+
+@theme {
+  --font-roboto-regular: "roboto-regular";
+  --font-roboto-meduim: "roboto-meduim";
+  --font-roboto-bold: "roboto-bold";
+  /* shadow-[0_0_1px_1px_#0003] */
+  --shadow-card: 0 0 1px 1px #0003;
+}
