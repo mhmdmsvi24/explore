@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
 
 @layer base {
   @font-face {
@@ -21,6 +22,7 @@
   --font-roboto-regular: "roboto-regular";
   --font-roboto-meduim: "roboto-meduim";
   --font-roboto-bold: "roboto-bold";
-  /* shadow-[0_0_1px_1px_#0003] */
   --shadow-card: 0 0 1px 1px #0003;
+  /* BreakPoints */
+  --breakpoint-xs: 30rem;
 }

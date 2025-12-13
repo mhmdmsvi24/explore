@@ -1,42 +1,48 @@
-import { useEffect } from "react";
-import { useState } from "react"
+import { useEffect, useState } from "react";
 
-export default function useFetch(url) {
-  const [data, setData] = useState(null);
+export default function useFetch(url, cacheName = null) {
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    let ignore = false;
+    const controller = new AbortController();
 
-    fetch(url)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("Network response was not OK");
+    async function fetchData() {
+      try {
+        // 1. Load cache first
+        if (cacheName) {
+          const cached = localStorage.getItem(cacheName);
+          if (cached) {
+            setData(JSON.parse(cached));
+            setLoading(false);
+            return;
+          }
         }
-        return response.json();
-      })
-      .then(json => {
-        if (!ignore) {
-          setData(json);
+
+        const res = await fetch(url, { signal: controller.signal });
+        if (!res.ok) throw new Error("Network response was not OK");
+
+        const json = await res.json();
+        setData(json);
+
+        // 3. Cache result
+        if (cacheName) {
+          localStorage.setItem(cacheName, JSON.stringify(json));
         }
-      })
-      .catch(err => {
-        if (!ignore) {
+      } catch (err) {
+        if (err.name !== "AbortError") {
           setError(err);
         }
-      })
-      .finally(() => {
-        if (!ignore) {
-          setLoading(false);
-        }
-      });
+      } finally {
+        setLoading(false);
+      }
+    }
 
-    return () => {
-      ignore = true;
-    };
+    fetchData();
 
-  }, [url]);
+    return () => controller.abort();
+  }, [url, cacheName]);
 
   return { data, loading, error };
 }
