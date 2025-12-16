@@ -16,10 +16,17 @@ export function formatPopulation(num) {
       if (formatted.endsWith(".0")) {
         formatted = formatted.slice(0, -2);
       }
-      
+
       return formatted + symbol;
     }
   }
 
   return String(num);
+}
+
+export function numberToWeekDay(number, lower = false) {
+  let weekdays = ["SAT", "SUN", "MON", "TUE", "WED", "THU", "FRI"]
+
+  if (lower) return weekdays[number].toLocaleLowerCase();
+  return weekdays[number];
 }

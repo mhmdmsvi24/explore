@@ -17,6 +17,9 @@ importers:
       leaflet:
         specifier: ^1.9.4
         version: 1.9.4
+      qweather-icons:
+        specifier: ^1.8.0
+        version: 1.8.0
       react:
         specifier: ^19.2.0
         version: 19.2.3
@@ -1045,6 +1048,10 @@ packages:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
 
+  qweather-icons@1.8.0:
+    resolution: {integrity: sha512-Ti7KGrWXSV7e5HMpjPhDYua8hwC3t0nScNOSQ3kLPehsOja5cioZw8bcKi7jeAGBlVLrgAkLla5xVEYlH1s5Jw==}
+    engines: {node: '>=10'}
+
   react-dom@19.2.3:
     resolution: {integrity: sha512-yELu4WmLPw5Mr/lmeEpox5rw3RETacE++JgHqQzd2dg+YbJuat3jH4ingc+WPZhxaoFzdv9y33G+F7Nl5O0GBg==}
     peerDependencies:
@@ -2053,6 +2060,8 @@ snapshots:
   prelude-ls@1.2.1: {}
 
   punycode@2.3.1: {}
+
+  qweather-icons@1.8.0: {}
 
   react-dom@19.2.3(react@19.2.3):
     dependencies:

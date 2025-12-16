@@ -3,6 +3,16 @@
 
 @layer base {
   @font-face {
+    font-family: "roboto-thin";
+    src: url("/roboto-thin.woff2");
+  }
+
+  @font-face {
+    font-family: "roboto-light";
+    src: url("/roboto-light.woff2");
+  }
+
+  @font-face {
     font-family: "roboto-regular";
     src: url("/roboto-regular.woff2");
   }
@@ -16,12 +26,21 @@
     font-family: "roboto-bold";
     src: url("/roboto-bold.woff2");
   }
+
+  @font-face {
+    font-family: "roboto-bold-italic";
+    src: url("/roboto-bold-italic.woff2");
+  }
 }
 
 @theme {
+  --font-roboto-thin: "roboto-thin";
+  --font-roboto-light: "roboto-light";
   --font-roboto-regular: "roboto-regular";
   --font-roboto-meduim: "roboto-meduim";
   --font-roboto-bold: "roboto-bold";
+  --font-roboto-bold-italic: "roboto-bold-italic";
+  /* Shadow */
   --shadow-card: 0 0 1px 1px #0003;
   /* BreakPoints */
   --breakpoint-xs: 30rem;

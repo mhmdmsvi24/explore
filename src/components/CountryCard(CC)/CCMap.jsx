@@ -1,9 +1,9 @@
 import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
-import countryData from "../data/geoJsonData.geo.json";
-import { FitBounds } from "../utils/helpers";
+import countryData from "../../data/geoJsonData.geo.json";
+import { FitBounds } from "../../utils/helpers";
 
 
-function CountryMap({ countryName }) {
+function CCMap({ countryName }) {
   // Find the feature that matches the selected country
   const countryFeature = countryData.features.find(
     (f) => f.properties.name === countryName
@@ -38,4 +38,4 @@ function CountryMap({ countryName }) {
   );
 }
 
-export default CountryMap;
+export default CCMap;
