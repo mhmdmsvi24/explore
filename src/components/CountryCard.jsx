@@ -1,6 +1,7 @@
 import InfoBox from "./InfoBox";
 import { formatPopulation } from "../utils/util";
 import Image from "./Image";
+import CountryMap from "./CountryMap";
 
 export default function CountryCard({ data }) {
   return (
@@ -41,16 +42,18 @@ export default function CountryCard({ data }) {
         </div>
       </div>
       {/* Population, Languages, Get There, Weather */}
-      <div className="flex flex-col basis-[30%]">
+      <div className="flex flex-col basis-[30%] gap-2">
         {/* Population & Lanugage */}
         <div className="flex">
           <InfoBox name="population" value={formatPopulation(data.population)} />
           <InfoBox name="lanugage" value={Object.values(data.languages)[0]} />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-2">
           {/* Get There */}
-          <div>Get There</div>
-          {/* Weather */}
+          <div>Map View</div>
+          <div className="flex relative items-center justify-center h-full grow w-92.5 bg-lime-100 overflow-hidden aspect-video rounded-lg">
+            <CountryMap countryName={data.name.common} />
+          </div>
           <div>Weather</div>
         </div>
       </div>
