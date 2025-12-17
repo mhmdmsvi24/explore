@@ -16,7 +16,7 @@ export default function Countries() {
   // ! Number of Countries reduced to 10 for development speed
   return (
     <div
-      className="grid grid-cols-1 xl:grid-cols-2 gap-2 my-2"
+      className="grid grid-cols-1 md:grid-cols-2 gap-2 my-2 p-1 place-content-center md:space-y-1 lg:space-y-2 xl:grid-cols-3"
     >
       {
         data.map((country, ind) => {
