@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Loading from "./Loading";
 
-export default function Image({ src, alt, style, loading = "lazy", decoding = "async" }) {
+export default function Image({ src, alt, style = null, loading = "lazy", decoding = "async" }) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
