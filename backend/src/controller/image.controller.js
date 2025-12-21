@@ -4,7 +4,6 @@ export const getImage = async (req, res, next) => {
   try {
     const { country } = req.params;
     const { page, perPage, orientation, orderBy } = req.query;
-
     const image = await searchImage(country, page, perPage, orientation, orderBy);
 
     if (!image) {
