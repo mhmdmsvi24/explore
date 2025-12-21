@@ -11,9 +11,7 @@ dotenv.config({ path: path.resolve(__dirname, "../.env") });
 const config = {
   port: process.env.PORT,
   unsplash: {
-    api_key: process.env.UNSPLASH_API_KEY,
-    secret_key: process.env.UNSPLASH_SECRET_KEY,
-    id: process.env.UNSPLASH_APP_ID,
+    api_key: process.env.UNSPLASH_API_KEY
   },
 };
 
