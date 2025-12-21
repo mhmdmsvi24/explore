@@ -6,16 +6,22 @@ global.fetch = proxyFetch;
 
 const unsplash = createApi({
   accessKey: config.unsplash.api_key,
-  fetch
+  fetch,
 });
 
-export const searchImage = async (query, page = 1, perPage = 1, orientation = "landscape", orderBy = "relevant") => {
+export const searchImage = async (
+  query,
+  page = 1,
+  perPage = 1,
+  orientation = "landscape",
+  orderBy = "relevant",
+) => {
   const result = await unsplash.search.getPhotos({
     query,
     page,
     perPage,
     orientation,
-    orderBy
+    orderBy,
   });
 
   if (result.errors) {

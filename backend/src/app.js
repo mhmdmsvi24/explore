@@ -1,6 +1,6 @@
 import express from "express";
 import imageRoute from "./routes/image.route.js";
-import { errorHandler } from "./middleware/error.js"
+import { errorHandler } from "./middleware/error.js";
 
 const app = express();
 
